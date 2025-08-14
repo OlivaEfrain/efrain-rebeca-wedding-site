@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rebeca & Efrain's Wedding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #d3d3d3; /* soft silver-gray */
+  color: #1a1a1a;
+}
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background: url('WeddingPicture1.jpeg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F8F8FF;
+    text-align: center;
+    font-weight: 600;
+    padding: 0 1rem;
+    z-index: 10;
+  }
+
+  .hero h1.hero-title {
+    font-size: 4rem;
+    color: #F8F8FF;
+    text-shadow: 0 2px 10px rgba(10, 10, 30, 0.7);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    animation: fadeInUp 1.5s ease-out;
+  }
+
+  .hero p.hero-date,
+  .hero #countdown {
+    font-size: 2rem;
+    margin-top: 0.75rem;
+    color: #F8F8FF;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.85), 0 0 8px rgba(106, 123, 162, 0.8);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background: rgba(106, 123, 162, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 8px;
+    display: inline-block;
+    user-select: none;
+    border: none;
+    text-decoration: none;
+    animation: fadeInUp 2s ease-out 0.5s;
+    animation-fill-mode: both;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  section {
+    padding: 4rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    animation: slideIn 1s ease both;
+  }
+
+  section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #6A7BA2;
+    border-bottom: 2px solid #C0C0C0;
+    display: inline-block;
+    padding-bottom: 6px;
+    font-weight: 700;
+  }
+
+  section p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #4D5A6E;
+  }
+
+  section {
+  position: relative;
+  z-index: 1;
+}
+
+.section-decor {
+  position: absolute;
+  width: 180px;
+  max-width: 30%;
+  opacity: 1; /* fully visible */
+  pointer-events: none;
+  z-index: 0;
+  filter: none; /* removes all brightness, contrast, and shadow edits */
+  transition: none; /* removes zoom/hover effect */
+}
+
+.section-decor:hover {
+  transform: scale(1.05);
+}
+
+.top-left {
+  top: -35px;
+  left: -35px;
+}
+
+.bottom-right {
+  bottom: -35px;
+  right: -35px;
+}
+
+.couple-photo {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border: 5px solid #f5f5f5;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.couple-photo:hover {
+  transform: scale(1.02);
+}
+
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.snowflake {
+  color: #ffffff;
+  font-size: 1.5em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #cce3ff;
+  position: absolute;
+  top: -10%;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+/* Generate multiple snowflakes with different positions and delays */
+.snowflake:nth-child(7) { left: 15%; animation-duration: 11s; animation-delay: 1.5s; }
+.snowflake:nth-child(8) { left: 25%; animation-duration: 10s; animation-delay: 2.5s; }
+.snowflake:nth-child(9) { left: 35%; animation-duration: 12s; animation-delay: 3.5s; }
+.snowflake:nth-child(10) { right: 45%; animation-duration: 13s; animation-delay: 4.5s; }
+.snowflake:nth-child(11) { left: 55%; animation-duration: 14s; animation-delay: 5.5s; }
+.snowflake:nth-child(12) { right: 65%; animation-duration: 15s; animation-delay: 6.5s; }
+.snowflake:nth-child(13) { left: 75%; animation-duration: 12s; animation-delay: 7.5s; }
+.snowflake:nth-child(14) { left: 85%; animation-duration: 13s; animation-delay: 8.5s; }
+.snowflake:nth-child(15) { right: 95%; animation-duration: 14s; animation-delay: 9.5s; }
+.snowflake:nth-child(16) { right: 5%; animation-duration: 16s; animation-delay: 10.5s; }
+.snowflake:nth-child(17) { left: 12%; animation-duration: 11s; animation-delay: 11.5s; }
+.snowflake:nth-child(18) { left: 28%; animation-duration: 12s; animation-delay: 12.5s; }
+.snowflake:nth-child(19) { right: 42%; animation-duration: 13s; animation-delay: 13.5s; }
+.snowflake:nth-child(20) { left: 60%; animation-duration: 14s; animation-delay: 14.5s; }
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    top: 110%;
+    transform: translateX(-20px);
+  }
+}
+
+  /* Navigation */
+  nav.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #6A7BA2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    animation: slideIn 1s ease-in-out;
+  }
+
+  nav .logo {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .menu-container {
+    position: relative;
+  }
+
+  .menu-icon {
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  color: #F8F8FF;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #F8F8FF; /* soft off-white */
+  flex-direction: column;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(106, 123, 162, 0.25);
+  min-width: 180px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: 1px solid #d3d8e3;
+  font-family: 'Playfair Display', serif;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu a {
+  color: #6A7BA2;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  color: #A1B6D1;
+}
+
+  /* RSVP Form */
+  #rsvp-form input {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0.5rem auto;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #6A7BA2;
+    border-radius: 6px;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    background: #F8F8FF;
+    transition: border-color 0.3s;
+  }
+
+  #rsvp-form input:focus {
+    border-color: #C0C0C0;
+    outline: none;
+    background: #ffffff;
+  }
+
+  #rsvp-form button {
+    background-color: #6A7BA2;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 0.85rem 2.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  #rsvp-form button:hover,
+  #rsvp-form button:focus {
+    background-color: #C0C0C0;
+    color: #6A7BA2;
+    outline: none;
+    box-shadow: 0 6px 12px rgba(192, 192, 192, 0.7);
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 1rem;
+    }
+
+    .hero h1.hero-title {
+      font-size: 2.8rem;
+    }
+
+    .hero p.hero-date {
+      font-size: 1.5rem;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+<div id="snow-container"></div>
+
+<!-- Snowflake container -->
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+  <div class="snowflake">❄</div>
+  <div class="snowflake">❅</div>
+  <div class="snowflake">❆</div>
+</div>
+
+  <!-- Background Music -->
+  <audio id="background-music" src="Una Oración Contestada .mp3" loop preload="auto"></audio>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Rebeca & Efrain</div>
+    <div class="menu-container">
+      <button class="menu-icon" id="menu-icon" aria-pressed="false">☰</button>
+      <div class="dropdown-menu" id="dropdown-menu">
+        <a href="#story">Our Story</a>
+        <a href="#info">Wedding Info</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#" id="language-toggle">Español</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay">
+      <h1 class="hero-title" id="hero-title">Rebeca & Efrain</h1>
+      <p class="hero-date" id="hero-date">December 20, 2025</p>
+      <p id="countdown"></p>
+    </div>
+  </header>
+
+  <section id="love-photo" style="background: #dce3ec; padding: 60px 20px; text-align: center;">
+    <img src="Rebe'sBdayPicture.JPG" class="couple-photo" alt="Efrain & Rebeca in love">
+    <p style="font-style: italic; margin-top: 25px; font-size: 1.2rem; color: #4a4a4a;">
+      “In your arms, I’ve found my forever.”
+    </p>
+  </section>
+
+  <!-- Our Story -->
+  <section id="story">
+    <h2 id="story-heading">Our Story</h2>
+    <p id="story-text">We met in church and grew closer through serving, prayer, and music. Over time, our bond grew stronger until we knew that God had written our love story.</p>
+  </section>
+
+  <!-- Wedding Info -->
+<section id="info">
+    <h2 id="info-heading">Wedding Info</h2>
+    <img src="FirstTimeTalkingAboutWedding.JPG" class="section-decor top-left" alt="Winter floral decor top left">
+    <img src="Rebe'sBdayPicture.JPG" class="section-decor bottom-right" alt="Winter floral decor bottom right">
+    <p><strong id="date-label">Date:</strong> December 20th, 2025</p>
+    <p><strong id="time-label">Time:</strong> 4:30 PM</p>
+    <p><strong id="venue-label">Venue:</strong> Update Soon</p>
+    <p><a href="https://www.google.com/maps?q=Community+House+Winnetka" target="_blank" id="maps-link">Open in Google Maps</a></p>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <h2 id="rsvp-heading">RSVP</h2>
+    <img src="UsMatchingGreen.PNG" class="section-decor bottom-right" alt="Silver snowflake decor">
+    <form id="rsvp-form" action="https://formsubmit.co/doublee0203@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Email Address (optional)">
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Language toggle
+    const toggleButton = document.getElementById('language-toggle');
+    let isEnglish = true;
+    toggleButton.addEventListener('click', () => {
+      if (isEnglish) {
+        document.getElementById('hero-title').textContent = 'Rebeca & Efrain';
+        document.getElementById('hero-date').textContent = '20 de diciembre, 2025';
+        document.getElementById('story-heading').textContent = 'Nuestra Historia';
+        document.getElementById('story-text').textContent = 'Nos conocimos en la iglesia y nos acercamos a través del servicio, la oración y la música. Con el tiempo, nuestro vínculo se fortaleció hasta que supimos que Dios había escrito nuestra historia de amor. ';
+        document.getElementById('info-heading').textContent = 'Información de la Boda';
+        document.getElementById('date-label').textContent = 'Fecha:';
+        document.getElementById('time-label').textContent = 'Hora:';
+        document.getElementById('venue-label').textContent = 'Lugar:';
+        document.getElementById('maps-link').textContent = 'Abrir en Google Maps';
+        document.getElementById('rsvp-heading').textContent = 'RSVP';
+        toggleButton.textContent = 'English';
+      } else {
+        document.getElementById('hero-title').textContent = 'Rebeca & Efrain';
+        document.getElementById('hero-date').textContent = 'December 20, 2025';
+        document.getElementById('story-heading').textContent = 'Our Story';
+        document.getElementById('story-text').textContent = 'We met in church and grew closer through serving, prayer, and music. Over time, our bond grew stronger until we knew that God had written our love story.';
+        document.getElementById('info-heading').textContent = 'Wedding Info';
+        document.getElementById('date-label').textContent = 'Date:';
+        document.getElementById('time-label').textContent = 'Time:';
+        document.getElementById('venue-label').textContent = 'Venue:';
+        document.getElementById('maps-link').textContent = 'Open in Google Maps';
+        document.getElementById('rsvp-heading').textContent = 'RSVP';
+        toggleButton.textContent = 'Español';
+      }
+      isEnglish = !isEnglish;
+    });
+
+    // Countdown Timer
+    const countdownEl = document.getElementById('countdown');
+    const weddingDate = new Date('December 20, 2025 16:30:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        countdownEl.textContent = "We're Married!!! 🎉";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    // Snowflakes
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.textContent = '❄';
+      snowflake.style.left = Math.random() * window.innerWidth + 'px';
+      const size = 12 + Math.random() * 12;
+      snowflake.style.fontSize = size + 'px';
+      const fallDuration = 15 + Math.random() * 15;
+      snowflake.style.animationDuration = `${fallDuration}s`;
+      document.body.appendChild(snowflake);
+      setTimeout(() => {
+        snowflake.remove();
+      }, fallDuration * 1000);
+    }
+    setInterval(createSnowflake, 400);
+
+    // Dropdown Menu Toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    menuIcon.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('show');
+      const isExpanded = menuIcon.getAttribute('aria-pressed') === 'true';
+      menuIcon.setAttribute('aria-pressed', !isExpanded);
+    });
+    document.addEventListener('click', (event) => {
+      const isClickInside = menuIcon.contains(event.target) || dropdownMenu.contains(event.target);
+      if (!isClickInside) {
+        dropdownMenu.classList.remove('show');
+        menuIcon.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    // Play music on first interaction
+    const audio = document.getElementById('background-music');
+let musicStarted = false;
+
+function startMusic() {
+  if (!musicStarted) {
+    audio.volume = 0.7; // Set a comfortable volume
+    audio.play()
+      .then(() => {
+        musicStarted = true;
+        console.log("Music started");
+      })
+      .catch((e) => {
+        console.warn("Autoplay failed:", e);
+      });
+  }
+}
+
+// Listen to click or scroll
+document.addEventListener('click', startMusic, { once: true });
+document.addEventListener('scroll', startMusic, { once: true });
+  </script>
+</body>
+</html>
